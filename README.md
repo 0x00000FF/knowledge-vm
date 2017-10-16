@@ -5,7 +5,6 @@ it has pc(program counter), ac(accumulator), and ir(instruction register).
 every datas(includes instructions) are stored in 16bit integer array, it sizes 4096.
 
 program starts from 0th address of memory, and it terminates when it encounters opcode 0.
-parameter can be skipped if the opcode does not require any parameter.
 
 # Opcodes
 if opcode requires parameter, marked with @
@@ -24,3 +23,9 @@ if opcode requires parameter, marked with @
 | 9@     | load value to ac from address                    |
 | A      | print character from ac matches with ASCII code. |
 | B@     | set 16bit integer to address from user input     |
+
+
+# How to Program it
+every instructions are 4-digit hex value, such as 1231 (jump to 0x231th address if ac qeuals 0)
+
+parameter can be skipped if the opcode does not require any parameter.
