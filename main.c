@@ -98,7 +98,7 @@ void execute(const int16 instruction)
             break;
 
         case 0xA: // prn
-            printf("%c", ac);
+            putchar(ac);
             break;
 
         case 0xB: // inp (addr)
@@ -106,7 +106,7 @@ void execute(const int16 instruction)
             break;
 
         default:
-            printf("\nwarning : undefined opcode %d, ignored\n", opcode);
+            printf("\nwarning : undefined opcode %x, ignored\n", opcode);
             break;
     }
 }
