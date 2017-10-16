@@ -64,3 +64,8 @@ to stop pushing instructions, type `-1`
 
 
 5 5 5 5 5 5 5 5 A -1
+
+
+# Why "Knowledge"?
+
+Absolutely from "Patchouli Knowledge", the name of the character who I really love.
