@@ -29,3 +29,5 @@ if opcode requires parameter, marked with @
 every instructions are 4-digit hex value, such as 1231 (jump to 0x231th address if ac qeuals 0)
 
 parameter can be skipped if the opcode does not require any parameter.
+
+to stop pushing instructions, type `-1`
