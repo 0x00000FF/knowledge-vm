@@ -31,3 +31,36 @@ every instructions are 4-digit hex value, such as 1231 (jump to 0x231th address 
 parameter can be skipped if the opcode does not require any parameter.
 
 to stop pushing instructions, type `-1`
+
+
+# HELLO WORLD (can be optimized)
+4 4 4 4 4 4 4 4 4 4 8300
+
+6300 8301 6301 6301 6300 4 4 A
+
+
+5 5 5 A
+
+
+4 4 4 4 4 4 4 A A
+
+
+4 4 4 A
+
+
+9302 6301 6300 4 4 A
+
+
+6301 6301 6300 4 4 4 4 4 A
+
+
+9302 6301 6301 6301 6301 5 A
+
+
+4 4 4 A
+
+
+5 5 5 5 5 5 A
+
+
+5 5 5 5 5 5 5 5 A -1
