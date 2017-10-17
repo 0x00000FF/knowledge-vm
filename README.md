@@ -71,4 +71,4 @@ to stop pushing instructions, type `-1`
 
 # Why "Knowledge"?
 
-Absolutely from "Patchouli Knowledge", the name of the character who I really love.
+Absolutely from "Patchouli Knowledge", the name of the character from touhou project, who I really love.
