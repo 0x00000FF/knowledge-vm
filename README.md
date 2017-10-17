@@ -2,7 +2,7 @@
 programmable 16bit pseudo virtual machine. I made it just for *fun*
 
 it has pc(program counter), ac(accumulator), and ir(instruction register).
-every datas(includes instructions) are stored in 16bit integer array, it sizes 4096.
+every datas(includes instructions) are stored in 16bit integer array(also I call it as "memory"), statically sized in 4096.
 
 program starts from 0th address of memory, and it terminates when it encounters opcode 0.
 
