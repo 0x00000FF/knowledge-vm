@@ -3,6 +3,7 @@
 
 typedef __int8_t  byte;
 typedef __int16_t int16;
+typedef __uint16_t uint16;
 
 byte  sigkill = 0;
 
@@ -26,31 +27,34 @@ void program()
     {
         scanf("%x", &input);
 
-        if (input == -1) {
+        if (input == -1)
+        {
             memory[index] = 0;
             break;
-        } else {
+        }
+        else
+        {
             memory[index++] = input;
         }
     }
 }
 
-void check(const int16 pc)
+void check(const uint16 pc)
 {
     if (pc > 4096)
     {
-        printf("illegal pc value, machine terminated.");
+        puts("error : illegal pc value, machine terminated.");
         sigkill = 1;
     }
 }
 
-void execute(const int16 instruction)
+void execute()
 {
     byte opcode;
-    int16 ax;
+    uint16 ax;
 
-    opcode = (byte)(instruction < 0x1000 && instruction > 0 ? (__uint16_t)instruction : ((__uint16_t )instruction >> 12));
-    ax = instruction - (opcode << 12);
+    opcode = (byte)(ir < 0x1000 && ir > 0 ? (uint16)ir : ((uint16)ir >> 12));
+    ax = (uint16)(ir - (opcode << 12));
 
     switch (opcode)
     {
@@ -102,7 +106,7 @@ void execute(const int16 instruction)
             break;
 
         case 0xB: // inp (addr)
-            scanf("%d", (memory + ax));
+            scanf("%d", memory + ax);
             break;
 
         default:
@@ -113,14 +117,14 @@ void execute(const int16 instruction)
 
 int main(void)
 {
-    printf("Knowledge 16bit Pseudo-Machine\nProgrammed by P.Knowledge, 2016-\n\n");
+    puts("Knowledge 16bit Pseudo-Machine\nProgrammed by P.Knowledge, 2016-\n");
     program();
 
     while (!sigkill)
     {
         ir = memory[pc++];
-        execute(ir);
+        execute();
 
-        check(pc);
+        check((uint16)pc);
     }
 }
