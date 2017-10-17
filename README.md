@@ -9,6 +9,11 @@ program starts from 0th address of memory, and it terminates when it encounters 
 all of registers/memories are initialized as 0.
 
 # Opcodes
+Usage:
+| Opcode | Address(Parameter)         |
+|:------:|:------------------:|:-:|:-:|
+|    0   |   |   |   |
+
 if opcode requires parameter, marked with @
 
 | Opcode | Description                                                                                                |
