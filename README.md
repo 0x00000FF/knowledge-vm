@@ -8,6 +8,17 @@ program starts from 0th address of memory, and it terminates when it encounters 
 
 all of registers/memories are initialized as 0.
 
+
+# How to Program it
+every instructions are 4-digit hex value, such as 1231 (jump to 0x231th address if ac qeuals 0)
+
+first digit is an *opcode*, and the another digits are parameter which points memory address.
+
+parameter can be skipped if the opcode does not require any parameter.
+
+to stop pushing instructions, type `-1`
+
+
 # Opcodes
 Usage:
 
@@ -31,14 +42,6 @@ if opcode requires parameter, marked with @
 | 9@     | load value to ac from address                                                                              |
 | A      | print character from ac matches with ASCII code.                                                           |
 | B@     | set 16bit integer to address from user input                                                               |
-
-
-# How to Program it
-every instructions are 4-digit hex value, such as 1231 (jump to 0x231th address if ac qeuals 0)
-
-parameter can be skipped if the opcode does not require any parameter.
-
-to stop pushing instructions, type `-1`
 
 
 # HELLO WORLD (can be optimized)
