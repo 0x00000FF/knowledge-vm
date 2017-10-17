@@ -10,6 +10,7 @@ all of registers/memories are initialized as 0.
 
 # Opcodes
 Usage:
+
 | Opcode | Parameter | Example |
 |:------:|:---------:|:-------:|
 |    8   |    300    |   8300  |
