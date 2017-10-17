@@ -13,7 +13,7 @@ if opcode requires parameter, marked with @
 
 | Opcode | Description                                                                                                |
 |--------|------------------------------------------------------------------------------------------------------------|
-| 0      | Terminate Program  This opcode changes value of "sigkill" into 1, required by vm to determine termination. |
+| 0      | Terminate Program<br/>This opcode changes value of "sigkill" into 1, required by vm to determine termination. |
 | 1@     | jump to address if ac equals 0                                                                             |
 | 2@     | jump to address if ac larger than 0                                                                        |
 | 3@     | jump to address if ac lesser than 0                                                                        |
