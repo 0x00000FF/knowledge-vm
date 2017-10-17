@@ -34,6 +34,7 @@ to stop pushing instructions, type `-1`
 
 
 # HELLO WORLD (can be optimized)
+```
 4 4 4 4 4 4 4 4 4 4 8300
 
 6300 8301 6301 6301 6300 4 4 A
@@ -64,7 +65,7 @@ to stop pushing instructions, type `-1`
 
 
 5 5 5 5 5 5 5 5 A -1
-
+```
 
 # Why "Knowledge"?
 
