@@ -1,10 +1,12 @@
 # Knowledge Virtual Machine
 programmable 16bit pseudo virtual machine. I made it just for *fun*
 
-it has pc(program counter), ac(accumulator), and ir(instruction register).
+it has pc(program counter), ac(accumulation register), and ir(instruction register).
 every datas(includes instructions) are stored in 16bit integer array(also called as "memory"), statically sized in 4096.
 
 program starts from 0th address of memory, and it terminates when it encounters opcode 0.
+
+all of registers/memories are initialized as 0.
 
 # Opcodes
 if opcode requires parameter, marked with @
