@@ -25,6 +25,7 @@ Usage:
 | Opcode | Parameter | Example |
 |:------:|:---------:|:-------:|
 |    8   |    300    |   8300  |
+|    4   | skippable |  4     |
 
 if opcode requires parameter, marked with @
 
