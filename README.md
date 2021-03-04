@@ -1,65 +1,41 @@
 # Knowledge Virtual Machine
-programmable 16bit pseudo virtual machine. I made it just for *fun*
+programmable 32bit pseudo virtual machine, successor of 16bit version. I made it just for *fun*
 
-it has pc(program counter), ac(accumulation register), and ir(instruction register).
-every datas(includes instructions) are stored in 16bit integer array(also called as "memory"), statically sized in 4096.
+Although this version of knowledge-vm design has no connection with 16bit legacy, it just succeeded the name.
 
-program starts from 0th address of memory, and it terminates when it encounters opcode 0.
+## Usage
 
-all of registers/memories are initialized as 0.
-
-
-# How to Program it
-every instructions are 4-digit hex value, such as 1231 (jump to 0x231th address if ac qeuals 0)
-
-first digit is an *opcode*, and the another digits are parameter which points memory address.
-
-parameter can be skipped if the opcode does not require any parameter.
-
-to stop pushing instructions, type `-1`
-
-
-# Opcodes
-Usage:
-
-| Opcode | Parameter | Example |
-|:------:|:---------:|:-------:|
-|    8   |    300    |   8300  |
-|    4   | skippable |  4     |
-
-if opcode requires parameter, marked with @
-
-| Opcode | Description                                                                                                |
-|--------|------------------------------------------------------------------------------------------------------------|
-| 0      | Terminate Program<br/>This opcode changes value of "sigkill" into 1, required by vm to determine termination. |
-| 1@     | jump to address if ac equals 0                                                                             |
-| 2@     | jump to address if ac larger than 0                                                                        |
-| 3@     | jump to address if ac lesser than 0                                                                        |
-| 4      | add 1 to ac                                                                                                |
-| 5      | subtract 1 from ac                                                                                         |
-| 6@     | add value to ac from address                                                                               |
-| 7@     | sub value from ac from address                                                                             |
-| 8@     | store value to address from ac                                                                             |
-| 9@     | load value to ac from address                                                                              |
-| A      | print character from ac matches with ASCII code.                                                           |
-| B@     | set 16bit integer to address from user input                                                               |
-
-
-# HELLO WORLD (can be optimized)
 ```
-4 4 4 4 4 4 4 4 4 4 8300
-6300 8301 6301 6301 6300 4 4 A
-5 5 5 A
-4 4 4 4 4 4 4 A A
-4 4 4 A
-9302 6301 6300 4 4 A
-6301 6301 6300 4 4 4 4 4 A
-9302 6301 6301 6301 6301 5 A
-4 4 4 A
-5 5 5 5 5 5 A
-5 5 5 5 5 5 5 5 A -1
+knowledge-vm --memory=<bytes=4096> --cycles=<per_second=300> 
+             --input=<file_descriptor_no_or_filename=0>
+             --output=<file_descriptor_no_or_filename=1>
+             --log=<log_level: none, verbose, warning, error>
+             --rom=<basic_knowledge_vm_program_binary>
 ```
 
-# Why "Knowledge"?
+
+## Register Structure
+
+it has 8 x 32bit general integer registers(r0~r7), 8 x 32bit float registers (x0~x7), return register(rret), two control registers(ca, cf) and a program counter (ip). it can has dynamically sized memory which starts its address with 1. it can get input from several external streams so that interact with internal systems.
+
+it introduced another two registers: stack base pointer (sbp) which initially points end of memory address, and the stack top pointer (stp). `stp` must not have a value overs `sbp`, or system will halt immediately with control.
+
+### Size Suffixes with Registers
+
+### Control Register Flags
+
+## Instruction Set Architecture
+
+### Instructions
+
+## Working Flow
+
+## Example Programs
+
+### Hello World
+
+### Fibonacci Sequence
+
+## Why "Knowledge"?
 
 Absolutely from "Patchouli Knowledge", the name of the character from touhou project, who I really love.
