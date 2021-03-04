@@ -31,7 +31,13 @@ Knowledge VM provides two control registers `cp` and `cm`.
 
 ## Instruction Set Architecture
 
+
+
 ### Instructions
+
+|  Actual Bit Representation | Mnemonic | Description |
+|:--------------------------:|:--------:|:-----------:|
+|                            |          |             |
 
 ## Working Flow
 
