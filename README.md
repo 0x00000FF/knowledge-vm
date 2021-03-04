@@ -19,7 +19,7 @@ knowledge-vm --memory=<bytes=4096> --cycles=<per_second=300>
 
 it has 8 x 32bit general integer registers(`r0~r7`), 8 x 32bit float registers (`x0~x7`), return register(`rret`) which points address of an instruction to be jumped into after current procedure ends, two control registers(`ca`, `cf`) and a program counter (`ip`). it can has dynamically sized memory which starts its address with 1. it can get input from several external streams so that interact with internal systems.
 
-it introduced another two registers: stack base pointer (`sbp`) which initially points end of memory address, and the stack top pointer (`stp`). `stp` must not have a value overs `sbp`, or system will halt immediately with control.
+it introduced another two registers: stack base pointer (`sbp`) which initially points end of memory address, and the stack top pointer (`stp`). `stp` must not have a value overs `sbp`, or system will halt immediately with setting related control register.
 
 ### Size Suffixes with Registers
 
